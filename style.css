@@ -56,5 +56,64 @@ a {
 
 a:hover {
   color: var(--secondary-color);
-  font-weight: bold;
+}
+
+/* MOBILE Menu */
+#mobile-nav {
+  display: none;
+}
+
+.hamburger-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.hamburger-icon {
+  width: 3rem;
+  height: 3rem;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.x-svg {
+  display: none;
+}
+
+.hamburger-icon:hover {
+  color: var(--secondary-color);
+}
+
+.menu-links {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: fit-content;
+  max-height: 0;
+  overflow: hidden;
+  transition: all .3 ease-in-out;
+}
+
+.menu-links a {
+  display: block;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1rem;
+  color: var(--primary-color);
+  transition: all .3 ease-in-out;
+}
+
+.menu-links li {
+  list-style: none;
+}
+
+.hamburger-svg.open {
+  display: none;
+}
+
+.x-svg.open {
+  display: block;
+}
+
+.menu-links.open {
+  max-height: 10rem;
 }

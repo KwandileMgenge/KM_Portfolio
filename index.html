@@ -9,6 +9,7 @@
   <title>My Portfolio</title>
 </head>
 <body>
+  <!-- DESKTOP NAVBAR -->
   <nav id="desktop-nav">
     <!-- Logo -->
     <div class="logo">
@@ -18,12 +19,46 @@
     </div>
 
     <!-- Navigation Links -->
-    <div class="">
+    <div>
       <ul class="nav-links">
         <li><a href="#home" aria-label="Home">Home</a></li>
         <li><a href="#projects" aria-label="Projects">Projects</a></li>
         <li><a href="#about" aria-label="About">About</a></li>
       </ul>
+    </div>
+  </nav>
+
+  <!-- MOBILE NAVBAR -->
+  <nav id="mobile-nav">
+    <!-- Logo -->
+    <div class="logo">
+      <a class="logo-link" href="#home" aria-label="Portfolio">
+        <img src="./assets/icon-teeth-96x96.png" alt="portfolio icon">
+      </a>
+    </div>
+
+    <!-- MENU -->
+    <div class="hamburger-menu">
+      <!-- Icon -->
+      <div class="hamburger-icon" onclick="toggleMenu()">
+        <svg class="hamburger-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+        </svg>
+        <svg class="x-svg" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z"/>
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </div>
+
+      <!-- Menu Links -->
+      <div>
+        <ul class="menu-links">
+          <li><a href="#home" aria-label="Home" onclick="toggleMenu()">Home</a></li>
+          <li><a href="#projects" aria-label="Projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#about" aria-label="About" onclick="toggleMenu()">About</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
 </body>
