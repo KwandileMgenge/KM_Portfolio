@@ -51,12 +51,14 @@ nav {
 a {
   color: var(--primary-color);
   text-decoration: none;
+  font-weight: bold;
 }
 
 a:hover,
 svg:hover {
   color: var(--secondary-color);
   cursor: pointer ;
+  font-weight: bold;
 }
 
 /* MOBILE Menu */
@@ -112,7 +114,8 @@ svg:hover {
 }
 
 .menu-links.open {
-  max-height: 10rem;
+  background-color: black;
+  max-height: 15rem;
 }
 
 /* SECTIONS */
@@ -133,7 +136,8 @@ section {
   height: 85vh;
 }
 
-.hero_pic-container {
+.hero_pic-container,
+.about_pic-container {
   display: flex;
   height: 20rem;
   width: 20em;
@@ -150,7 +154,10 @@ section {
   margin: auto 0;
 }
 
-.hero-title {
+.hero-title,
+.projects-title,
+.about-title,
+.experience-title {
   font-size: 3rem;
 }
 
@@ -164,12 +171,44 @@ section {
   margin-bottom: 2rem;
 }
 
+/* PROJECTS */
+.projects-cards {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.project-img > img {
+  width: 16rem;
+}
+
+.project-card {
+  padding: 2rem;
+  border: solid .1rem var(--secondary-color);
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.project-card > h2 {
+  color: var(--secondary-color);
+}
+
+
 /* BUTTONS */
 
-.btn-container,
-.socials-container {
+.btn-container {
   display: flex;
   margin-top: 2rem;
+  gap: 1rem;
+}
+
+.socials-container,
+.icons-container {
+  display: flex;
+  align-items: center;
   gap: 1rem;
 }
 
@@ -182,15 +221,84 @@ section {
   transition: all 300ms ease-in-out;
 }
 
-.hero-btn {
+.hero-btn,
+.project-btn {
   background: var(--secondary-color);
   border: var(--secondary-color) solid .1rem;
-
 }
 
-.hero-btn:hover {
+.hero-btn:hover,
+.project-btn:hover {
   background: transparent;
   color: var(--secondary-color);
   border: var(--secondary-color) solid .1rem;
   cursor:  pointer;
+}
+
+/* ABOUT */
+
+#projects,
+#about,
+#experience {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5vh;
+  height: 95vh;
+}
+
+.about-pic {
+  border-radius: 1.5rem;
+}
+
+.about-container {
+  display: flex;
+  gap: 5rem;
+  margin: auto 0;
+}
+
+.about-info {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.about-details-container {
+  display: flex;
+  gap: 2rem;
+}
+
+.details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+  padding: 1rem;
+  margin: auto 0;
+  border: var(--secondary-color) solid .1rem;
+  border-radius: 1.5rem;
+  gap: .5rem;
+}
+
+.details-container > h3 {
+  color: var(--secondary-color);
+}
+
+.details-container-icon > svg {
+  color: var(--secondary-color);
+}
+
+.about-info > p {
+  margin-top: 5vh;
+}
+
+/* EXPERIENCE */
+
+.experience-info {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border-radius: 1.5em;
+  border: var(--primary-color) solid .1rem;
 }
