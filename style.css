@@ -122,7 +122,7 @@ svg:hover {
 
 section {
   height: 100vh;
-  margin: 0 10rem;
+  padding: 0 10rem;
   box-sizing: border-box;
   min-height: fit-content;
 }
@@ -180,6 +180,7 @@ section {
 
 .project-img > img {
   width: 16rem;
+  border-radius: 1rem;
 }
 
 .project-card {
@@ -297,8 +298,45 @@ section {
 
 .experience-info {
   display: flex;
+  margin-top: 1rem;
+  gap: 2rem;
+}
+
+.experience-info h3 {
+  color: var(--secondary-color);
+}
+
+.front-end-container,
+.back-end-container {
+  display: flex;
   flex-direction: column;
-  padding: 1rem;
+  align-items: center;
+  padding: 2rem;
   border-radius: 1.5em;
-  border: var(--primary-color) solid .1rem;
+  border: var(--secondary-color) solid .1rem;
+}
+
+.experience-icons-container {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+
+}
+
+/* FOOTER */
+
+footer {
+  height: 20vh;
+  padding: 2rem;
+  background: #343434;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+}
+
+.footer-icons {
+  margin-top: 1rem;
 }
