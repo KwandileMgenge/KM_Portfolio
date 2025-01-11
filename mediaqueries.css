@@ -6,4 +6,17 @@
   #mobile-nav {
     display: flex;
   }
+
+  .hero_pic-container {
+    display: none;
+  }
+
+  nav {
+    justify-content: space-between;
+    padding: 2rem;
+  }
+
+  .hero-info {
+    margin: 0;
+  }
 }
