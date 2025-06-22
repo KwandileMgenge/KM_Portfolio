@@ -5,7 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Kwandile Mgenge - Front-end Developer Portfolio">
   <meta name="keywords" content="front-end developer, web developer, JavaScript, React, HTML, CSS">
+  <meta property="og:title" content="Kwandile Mgenge | Front-end Developer">
+  <meta property="og:description" content="Portfolio of Kwandile Mgenge, Front-end Developer">
+  <meta property="og:image" content="https://yourdomain.com/assets/og-image.jpg">
+  <meta property="og:url" content="https://yourdomain.com">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="./assets/icon-teeth-96x96.png">
   <title>Kwandile Mgenge | Front-end Developer</title>
@@ -14,22 +24,31 @@
   <!-- Navigation -->
   <header class="header">
     <div class="container">
-      <a href="#home" class="logo">
-        <img src="./assets/icon-teeth-96x96.png" alt="KM logo" width="40">
+      <a href="#home" class="logo" aria-label="Home">
+        <img src="./assets/icon-teeth-96x96.png" alt="KM logo" width="40" height="40" loading="lazy">
       </a>
       
       <nav class="nav">
         <ul class="nav-list">
-          <li><a href="#home" class="nav-link">Home</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#skills" class="nav-link">Skills</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li><a href="#home" class="nav-link" data-text="Home">Home</a></li>
+          <li><a href="#projects" class="nav-link" data-text="Projects">Projects</a></li>
+          <li><a href="#about" class="nav-link" data-text="About">About</a></li>
+          <li><a href="#skills" class="nav-link" data-text="Skills">Skills</a></li>
+          <li><a href="#contact" class="nav-link" data-text="Contact">Contact</a></li>
         </ul>
         
-        <button class="btn-mobile-nav">
-          <i class="fas fa-bars icon-mobile-nav" name="menu-outline"></i>
-          <i class="fas fa-times icon-mobile-nav" name="close-outline"></i>
+        <div class="theme-toggle">
+          <input type="checkbox" id="theme-switch" class="theme-switch">
+          <label for="theme-switch" class="theme-label">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <span class="theme-ball"></span>
+          </label>
+        </div>
+        
+        <button class="btn-mobile-nav" aria-label="Toggle navigation">
+          <span class="icon-mobile-nav" name="menu-outline"></span>
+          <span class="icon-mobile-nav" name="close-outline"></span>
         </button>
       </nav>
     </div>
@@ -51,33 +70,43 @@
         </p>
         
         <div class="hero-cta">
-          <a href="#projects" class="btn btn--full">View My Work</a>
+          <a href="#projects" class="btn btn--full" data-cursor="hover">View My Work</a>
           <a href="https://docs.google.com/document/d/1OXL-JTaGJoYAmjswClaNua5EDODrKfz-6T2pDtSYh68/edit?usp=sharing" 
             target="_blank" 
-            class="btn btn--outline">
-            Download CV
+            rel="noopener noreferrer"
+            class="btn btn--outline"
+            data-cursor="hover">
+            Download CV <i class="fas fa-download"></i>
           </a>
         </div>
         
         <div class="hero-socials">
-          <a href="https://www.linkedin.com/in/kwandilemgenge/" target="_blank" aria-label="LinkedIn">
-            <i class="fab fa-linkedin"></i>
+          <a href="https://www.linkedin.com/in/kwandilemgenge/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" data-cursor="hover">
+            <i class="fab fa-linkedin-in"></i>
           </a>
-          <a href="https://github.com/KwandileMgenge" target="_blank" aria-label="GitHub">
+          <a href="https://github.com/KwandileMgenge" target="_blank" rel="noopener noreferrer" aria-label="GitHub" data-cursor="hover">
             <i class="fab fa-github"></i>
           </a>
-          <a href="mailto:kwandilen.mgenge@gmail.com" aria-label="Email">
+          <a href="mailto:kwandilen.mgenge@gmail.com" aria-label="Email" data-cursor="hover">
             <i class="fas fa-envelope"></i>
           </a>
-          <a href="https://www.instagram.com/quanda_jr/" target="_blank" aria-label="Instagram">
+          <a href="https://www.instagram.com/quanda_jr/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" data-cursor="hover">
             <i class="fab fa-instagram"></i>
           </a>
         </div>
       </div>
       
       <div class="hero-img-box">
-        <img src="./assets/intro-bg-image.jpg" alt="Kwandile Mgenge" class="hero-img">
+        <div class="hero-img-wrapper">
+          <img src="./assets/intro-bg-image.jpg" alt="Kwandile Mgenge" class="hero-img" width="500" height="500" loading="eager">
+          <div class="hero-img-decor"></div>
+        </div>
       </div>
+    </div>
+    
+    <div class="scroll-indicator">
+      <span class="scroll-text">Scroll down</span>
+      <div class="scroll-line"></div>
     </div>
   </section>
 
@@ -87,13 +116,19 @@
       <div class="section-header">
         <span class="subheading">My Work</span>
         <h2 class="heading-secondary">Featured Projects</h2>
+        <div class="section-divider"></div>
       </div>
       
       <div class="projects-grid">
         <!-- Project 1 -->
-        <div class="project-card">
+        <div class="project-card" data-cursor="hover">
           <div class="project-img-box">
-            <img src="/assets/Project1 Desktop View.png" alt="Cache Bank project" class="project-img">
+            <img src="/assets/Project1 Desktop View.png" alt="Cache Bank project" class="project-img" width="600" height="400" loading="lazy">
+            <div class="project-overlay">
+              <a href="https://glittering-cupcake-dadc1e.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-overlay-link">
+                Visit Live Demo <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
           </div>
           
           <div class="project-content">
@@ -112,11 +147,12 @@
             </p>
             
             <div class="project-links">
-              <a href="https://glittering-cupcake-dadc1e.netlify.app/" target="_blank" class="project-link">
+              <a href="https://glittering-cupcake-dadc1e.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-link">
                 Live Demo <i class="fas fa-external-link-alt"></i>
               </a>
               <a href="https://github.com/KwandileMgenge/SDF_Portfolio_Piece_CS20240155_WFO2407_D_Kwandile-Mgenge_SDF11.git" 
                 target="_blank" 
+                rel="noopener noreferrer"
                 class="project-link">
                 Code <i class="fab fa-github"></i>
               </a>
@@ -125,9 +161,14 @@
         </div>
         
         <!-- Project 2 -->
-        <div class="project-card">
+        <div class="project-card" data-cursor="hover">
           <div class="project-img-box">
-            <img src="/assets/Project2 Destop View.png" alt="Agile Board project" class="project-img">
+            <img src="/assets/Project2 Destop View.png" alt="Agile Board project" class="project-img" width="600" height="400" loading="lazy">
+            <div class="project-overlay">
+              <a href="https://deluxe-cassata-3d8436.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-overlay-link">
+                Visit Live Demo <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
           </div>
           
           <div class="project-content">
@@ -146,11 +187,12 @@
             </p>
             
             <div class="project-links">
-              <a href="https://deluxe-cassata-3d8436.netlify.app/" target="_blank" class="project-link">
+              <a href="https://deluxe-cassata-3d8436.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-link">
                 Live Demo <i class="fas fa-external-link-alt"></i>
               </a>
               <a href="https://github.com/KwandileMgenge/CS20240155_WFO2407_D_KwandileMgenge_JSL11.git" 
                 target="_blank" 
+                rel="noopener noreferrer"
                 class="project-link">
                 Code <i class="fab fa-github"></i>
               </a>
@@ -159,9 +201,14 @@
         </div>
         
         <!-- Project 3 -->
-        <div class="project-card">
+        <div class="project-card" data-cursor="hover">
           <div class="project-img-box">
-            <img src="/assets/Project3 Desktop View.png" alt="Book Connect project" class="project-img">
+            <img src="/assets/Project3 Desktop View.png" alt="Book Connect project" class="project-img" width="600" height="400" loading="lazy">
+            <div class="project-overlay">
+              <a href="https://resonant-choux-4d8fcb.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-overlay-link">
+                Visit Live Demo <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
           </div>
           
           <div class="project-content">
@@ -180,11 +227,12 @@
             </p>
             
             <div class="project-links">
-              <a href="https://resonant-choux-4d8fcb.netlify.app/" target="_blank" class="project-link">
+              <a href="https://resonant-choux-4d8fcb.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-link">
                 Live Demo <i class="fas fa-external-link-alt"></i>
               </a>
               <a href="https://github.com/KwandileMgenge/CS20240155_WFO2407_D_Kwandile-Mgenge_DJS03.git" 
                 target="_blank" 
+                rel="noopener noreferrer"
                 class="project-link">
                 Code <i class="fab fa-github"></i>
               </a>
@@ -192,34 +240,50 @@
           </div>
         </div>
       </div>
+      
+      <div class="projects-cta">
+        <a href="https://github.com/KwandileMgenge" target="_blank" rel="noopener noreferrer" class="btn btn--full" data-cursor="hover">
+          View More on GitHub <i class="fab fa-github"></i>
+        </a>
+      </div>
     </div>
   </section>
 
   <!-- About Section -->
   <section class="section-about" id="about">
     <div class="container">
+      <div class="section-header">
+        <span class="subheading">About Me</span>
+        <h2 class="heading-secondary">Who I Am</h2>
+        <div class="section-divider"></div>
+      </div>
+      
       <div class="about-grid">
         <div class="about-img-box">
-          <img src="/assets/profile-picture.jpg" alt="Kwandile Mgenge" class="about-img">
+          <div class="about-img-wrapper">
+            <img src="/assets/profile-picture.jpg" alt="Kwandile Mgenge" class="about-img" width="400" height="500" loading="lazy">
+            <div class="about-img-decor"></div>
+          </div>
         </div>
         
         <div class="about-text-box">
-          <div class="section-header">
-            <span class="subheading">About Me</span>
-            <h2 class="heading-secondary">Who I Am</h2>
-          </div>
-          
           <div class="about-stats">
-            <div class="stat-box">
+            <div class="stat-box" data-cursor="hover">
               <i class="fas fa-code stat-icon"></i>
               <h3 class="stat-number">2+</h3>
               <p class="stat-text">Years Experience</p>
             </div>
             
-            <div class="stat-box">
+            <div class="stat-box" data-cursor="hover">
               <i class="fas fa-graduation-cap stat-icon"></i>
               <h3 class="stat-number">1</h3>
               <p class="stat-text">Software Dev Certificate</p>
+            </div>
+            
+            <div class="stat-box" data-cursor="hover">
+              <i class="fas fa-project-diagram stat-icon"></i>
+              <h3 class="stat-number">10+</h3>
+              <p class="stat-text">Projects Completed</p>
             </div>
           </div>
           
@@ -241,6 +305,11 @@
               I approach each project with attention to detail, clean code practices, and a user-first mindset.
             </p>
           </div>
+          
+          <div class="about-cta">
+            <a href="#contact" class="btn btn--full" data-cursor="hover">Let's Talk</a>
+            <a href="#skills" class="btn btn--outline" data-cursor="hover">My Skills</a>
+          </div>
         </div>
       </div>
     </div>
@@ -252,63 +321,80 @@
       <div class="section-header">
         <span class="subheading">My Capabilities</span>
         <h2 class="heading-secondary">Skills & Technologies</h2>
+        <div class="section-divider"></div>
       </div>
       
       <div class="skills-tabs">
         <!-- Frontend Skills -->
-        <div class="skills-tab active" data-tab="frontend">
+        <div class="skills-tab active" data-tab="frontend" data-cursor="hover">
           <i class="fas fa-laptop-code tab-icon"></i>
           <h3 class="tab-title">Frontend</h3>
         </div>
         
         <!-- Backend Skills -->
-        <div class="skills-tab" data-tab="backend">
+        <div class="skills-tab" data-tab="backend" data-cursor="hover">
           <i class="fas fa-server tab-icon"></i>
           <h3 class="tab-title">Backend</h3>
+        </div>
+        
+        <!-- Tools -->
+        <div class="skills-tab" data-tab="tools" data-cursor="hover">
+          <i class="fas fa-tools tab-icon"></i>
+          <h3 class="tab-title">Tools</h3>
         </div>
       </div>
       
       <!-- Frontend Skills Content -->
       <div class="skills-content active" id="frontend">
         <div class="skill-cards">
-          <div class="skill-card">
+          <div class="skill-card" data-cursor="hover">
             <div class="skill-icon-box">
-              <i class="fab fa-html5 skill-icon html-icon"></i>
+              <i class="devicon-html5-plain colored skill-icon"></i>
             </div>
             <h4 class="skill-name">HTML5</h4>
-            <p class="skill-level">Advanced</p>
+            <div class="skill-progress">
+              <div class="progress-bar" style="width: 95%"></div>
+            </div>
           </div>
           
-          <div class="skill-card">
+          <div class="skill-card" data-cursor="hover">
             <div class="skill-icon-box">
-              <i class="fab fa-css3-alt skill-icon css-icon"></i>
+              <i class="devicon-css3-plain colored skill-icon"></i>
             </div>
             <h4 class="skill-name">CSS3</h4>
-            <p class="skill-level">Advanced</p>
+            <div class="skill-progress">
+              <div class="progress-bar" style="width: 90%"></div>
+            </div>
           </div>
           
-          <div class="skill-card">
+          <div class="skill-card" data-cursor="hover">
             <div class="skill-icon-box">
-              <i class="fab fa-js skill-icon js-icon"></i>
+              <i class="devicon-javascript-plain colored skill-icon"></i>
             </div>
             <h4 class="skill-name">JavaScript</h4>
-            <p class="skill-level">Intermediate</p>
+            <div class="skill-progress">
+              <div class="progress-bar" style="width: 80%"></div>
+            </div>
           </div>
           
-          <div class="skill-card">
+          <div class="skill-card" data-cursor="hover">
             <div class="skill-icon-box">
-              <i class="fab fa-react skill-icon react-icon"></i>
+              <i class="devicon-react-original colored skill-icon"></i>
             </div>
             <h4 class="skill-name">React</h4>
-            <p class="skill-level">Intermediate</p>
+            <div class="skill-progress">
+              <div class="progress-bar" style="width: 75%"></div>
+            </div>
           </div>
           
-          <div class="skill-card">
+          <div class="skill-card" data-cursor="hover">
             <div class="skill-icon-box">
-              <i class="fab fa-bootstrap skill-icon bootstrap-icon"></i>
+              <i class="devicon-tailwindcss-plain colored skill-icon"></i>
             </div>
             <h4 class="skill-name">TailwindCSS</h4>
-            <p class="skill-level">Intermediate</p>
+            <div class="skill-progress">
+              <div class="progress-bar" style="width: 85%"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -316,29 +402,148 @@
       <!-- Backend Skills Content -->
       <div class="skills-content" id="backend">
         <div class="skill-cards">
-          <div class="skill-card">
+          <div class="skill-card" data-cursor="hover">
             <div class="skill-icon-box">
-              <i class="fab fa-node-js skill-icon node-icon"></i>
+              <i class="devicon-nodejs-plain colored skill-icon"></i>
             </div>
             <h4 class="skill-name">Node.js</h4>
-            <p class="skill-level">Intermediate</p>
+            <div class="skill-progress">
+              <div class="progress-bar" style="width: 70%"></div>
+            </div>
           </div>
           
-          <div class="skill-card">
+          <div class="skill-card" data-cursor="hover">
             <div class="skill-icon-box">
-              <i class="fas fa-database skill-icon sql-icon"></i>
+              <i class="devicon-express-original skill-icon"></i>
+            </div>
+            <h4 class="skill-name">Express</h4>
+            <div class="skill-progress">
+              <div class="progress-bar" style="width: 65%"></div>
+            </div>
+          </div>
+          
+          <div class="skill-card" data-cursor="hover">
+            <div class="skill-icon-box">
+              <i class="devicon-postgresql-plain colored skill-icon"></i>
             </div>
             <h4 class="skill-name">PostgreSQL</h4>
-            <p class="skill-level">Beginner</p>
+            <div class="skill-progress">
+              <div class="progress-bar" style="width: 60%"></div>
+            </div>
           </div>
-          
-          <div class="skill-card">
+        </div>
+      </div>
+      
+      <!-- Tools Content -->
+      <div class="skills-content" id="tools">
+        <div class="skill-cards">
+          <div class="skill-card" data-cursor="hover">
             <div class="skill-icon-box">
-              <i class="fab fa-git-alt skill-icon git-icon"></i>
+              <i class="devicon-git-plain colored skill-icon"></i>
             </div>
             <h4 class="skill-name">Git</h4>
-            <p class="skill-level">Intermediate</p>
+            <div class="skill-progress">
+              <div class="progress-bar" style="width: 85%"></div>
+            </div>
           </div>
+          
+          <div class="skill-card" data-cursor="hover">
+            <div class="skill-icon-box">
+              <i class="devicon-github-original skill-icon"></i>
+            </div>
+            <h4 class="skill-name">GitHub</h4>
+            <div class="skill-progress">
+              <div class="progress-bar" style="width: 80%"></div>
+            </div>
+          </div>
+          
+          <div class="skill-card" data-cursor="hover">
+            <div class="skill-icon-box">
+              <i class="devicon-figma-plain colored skill-icon"></i>
+            </div>
+            <h4 class="skill-name">Figma</h4>
+            <div class="skill-progress">
+              <div class="progress-bar" style="width: 75%"></div>
+            </div>
+          </div>
+          
+          <div class="skill-card" data-cursor="hover">
+            <div class="skill-icon-box">
+              <i class="devicon-vscode-plain colored skill-icon"></i>
+            </div>
+            <h4 class="skill-name">VS Code</h4>
+            <div class="skill-progress">
+              <div class="progress-bar" style="width: 90%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="section-testimonials">
+    <div class="container">
+      <div class="section-header">
+        <span class="subheading">What People Say</span>
+        <h2 class="heading-secondary">Testimonials</h2>
+        <div class="section-divider"></div>
+      </div>
+      
+      <div class="testimonials-slider">
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <div class="testimonial-quote">
+              <i class="fas fa-quote-left"></i>
+            </div>
+            <p class="testimonial-text">
+              Kwandile demonstrated exceptional problem-solving skills and attention to detail in our project. 
+              His clean code and responsive designs significantly improved our user experience metrics.
+            </p>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-img-box">
+              <img src="./assets/testimonial-1.jpg" alt="John Doe" width="60" height="60" loading="lazy" class="author-img">
+            </div>
+            <div class="author-info">
+              <h4 class="author-name">John Doe</h4>
+              <p class="author-role">Product Manager, TechCorp</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <div class="testimonial-quote">
+              <i class="fas fa-quote-left"></i>
+            </div>
+            <p class="testimonial-text">
+              Working with Kwandile was a pleasure. He consistently delivered high-quality code on time and was 
+              always willing to go the extra mile to ensure the project's success.
+            </p>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-img-box">
+              <img src="./assets/testimonial-2.jpg" alt="Jane Smith" width="60" height="60" loading="lazy" class="author-img">
+            </div>
+            <div class="author-info">
+              <h4 class="author-name">Jane Smith</h4>
+              <p class="author-role">Lead Developer, WebSolutions</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-slider-controls">
+          <button class="slider-btn prev-btn" aria-label="Previous testimonial">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <div class="slider-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+          </div>
+          <button class="slider-btn next-btn" aria-label="Next testimonial">
+            <i class="fas fa-chevron-right"></i>
+          </button>
         </div>
       </div>
     </div>
@@ -347,13 +552,14 @@
   <!-- Contact Section -->
   <section class="section-contact" id="contact">
     <div class="container">
+      <div class="section-header">
+        <span class="subheading">Get In Touch</span>
+        <h2 class="heading-secondary">Let's Work Together</h2>
+        <div class="section-divider"></div>
+      </div>
+      
       <div class="contact-grid">
         <div class="contact-text-box">
-          <div class="section-header">
-            <span class="subheading">Get In Touch</span>
-            <h2 class="heading-secondary">Let's Work Together</h2>
-          </div>
-          
           <p class="contact-description">
             Have a project in mind or want to discuss potential opportunities? 
             I'm currently available for freelance work and full-time positions. 
@@ -366,37 +572,51 @@
               <a href="mailto:kwandilen.mgenge@gmail.com" class="contact-link">kwandilen.mgenge@gmail.com</a>
             </div>
             
+            <div class="contact-method">
+              <i class="fas fa-map-marker-alt contact-icon"></i>
+              <span class="contact-link">Cape Town, South Africa</span>
+            </div>
+            
             <div class="contact-socials">
-              <a href="https://www.linkedin.com/in/kwandilemgenge/" target="_blank" class="social-link">
-                <i class="fab fa-linkedin"></i>
+              <a href="https://www.linkedin.com/in/kwandilemgenge/" target="_blank" rel="noopener noreferrer" class="social-link">
+                <i class="fab fa-linkedin-in"></i>
               </a>
-              <a href="https://github.com/KwandileMgenge" target="_blank" class="social-link">
+              <a href="https://github.com/KwandileMgenge" target="_blank" rel="noopener noreferrer" class="social-link">
                 <i class="fab fa-github"></i>
               </a>
-              <a href="https://www.instagram.com/quanda_jr/" target="_blank" class="social-link">
+              <a href="https://www.instagram.com/quanda_jr/" target="_blank" rel="noopener noreferrer" class="social-link">
                 <i class="fab fa-instagram"></i>
               </a>
             </div>
           </div>
         </div>
         
-        <form class="contact-form">
+        <form class="contact-form" id="contactForm">
           <div class="form-group">
             <label for="name" class="form-label">Name</label>
-            <input type="text" id="name" class="form-input" placeholder="Your name" required>
+            <input type="text" id="name" name="name" class="form-input" placeholder="Your name" required>
           </div>
           
           <div class="form-group">
             <label for="email" class="form-label">Email</label>
-            <input type="email" id="email" class="form-input" placeholder="Your email" required>
+            <input type="email" id="email" name="email" class="form-input" placeholder="Your email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="subject" class="form-label">Subject</label>
+            <input type="text" id="subject" name="subject" class="form-input" placeholder="Subject">
           </div>
           
           <div class="form-group">
             <label for="message" class="form-label">Message</label>
-            <textarea id="message" class="form-input" rows="5" placeholder="Your message" required></textarea>
+            <textarea id="message" name="message" class="form-input" rows="5" placeholder="Your message" required></textarea>
           </div>
           
-          <button type="submit" class="btn btn--full form-btn">Send Message</button>
+          <button type="submit" class="btn btn--full form-btn" data-cursor="hover">
+            Send Message <i class="fas fa-paper-plane"></i>
+          </button>
+          
+          <div class="form-status" id="formStatus"></div>
         </form>
       </div>
     </div>
@@ -408,9 +628,10 @@
       <div class="footer-content">
         <div class="footer-logo">
           <a href="#home" class="footer-logo-link">
-            <img src="./assets/icon-teeth-96x96.png" alt="KM logo" width="40">
+            <img src="./assets/icon-teeth-96x96.png" alt="KM logo" width="40" height="40" loading="lazy">
           </a>
           <p class="footer-text">Kwandile Mgenge</p>
+          <p class="footer-text">Front-end Developer</p>
         </div>
         
         <div class="footer-links">
@@ -424,6 +645,16 @@
           </ul>
         </div>
         
+        <div class="footer-links">
+          <h4 class="footer-heading">Services</h4>
+          <ul class="footer-list">
+            <li><a href="#" class="footer-link">Web Development</a></li>
+            <li><a href="#" class="footer-link">UI/UX Design</a></li>
+            <li><a href="#" class="footer-link">Responsive Design</a></li>
+            <li><a href="#" class="footer-link">Web Maintenance</a></li>
+          </ul>
+        </div>
+        
         <div class="footer-contact">
           <h4 class="footer-heading">Contact Info</h4>
           <address class="footer-address">
@@ -431,7 +662,23 @@
               <i class="fas fa-envelope footer-icon"></i>
               kwandilen.mgenge@gmail.com
             </p>
+            <p class="footer-text">
+              <i class="fas fa-map-marker-alt footer-icon"></i>
+              Cape Town, South Africa
+            </p>
           </address>
+          
+          <div class="footer-socials">
+            <a href="https://www.linkedin.com/in/kwandilemgenge/" target="_blank" rel="noopener noreferrer" class="social-link">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/KwandileMgenge" target="_blank" rel="noopener noreferrer" class="social-link">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.instagram.com/quanda_jr/" target="_blank" rel="noopener noreferrer" class="social-link">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
         </div>
       </div>
       
@@ -442,6 +689,15 @@
       </div>
     </div>
   </footer>
+
+  <!-- Back to Top Button -->
+  <a href="#home" class="back-to-top" aria-label="Back to top" data-cursor="hover">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
 
   <script src="script.js"></script>
 </body>
