@@ -1,18 +1,27 @@
 document.addEventListener('DOMContentLoaded', function() {
   // Mobile Navigation
-  const btnNav = document.querySelector('.btn-mobile-nav');
-  const header = document.querySelector('.header');
-  const navLinks = document.querySelectorAll('.nav-link');
-  
-  btnNav.addEventListener('click', function() {
-    header.classList.toggle('nav-open');
-  });
+  // const btnNav = document.querySelector('.btn-mobile-nav');
+  // const nav = document.querySelector('.nav');
+
+  // btnNav.addEventListener('click', function() {
+  //   navLinks.classList.toggle('nav-open');
+  // });
+
+  // 
+
+  const header = document.querySelector(".header");
+  const btnNav = document.querySelector(".btn-mobile-nav");
+  const navLinks = document.querySelectorAll(".nav-list a");
+
+  if (header && btnNav) {
+    btnNav.addEventListener("click", () => {
+      header.classList.toggle("nav-open");
+    });
+  }
   
   navLinks.forEach(link => {
     link.addEventListener('click', function() {
-      if (header.classList.contains('nav-open')) {
-        header.classList.remove('nav-open');
-      }
+      header.classList.remove('nav-open');
     });
   });
   

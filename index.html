@@ -13,6 +13,7 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
@@ -29,27 +30,39 @@
       </a>
       
       <nav class="nav">
-        <ul class="nav-list">
+        <ul class="nav-list nav-open">
           <li><a href="#home" class="nav-link" data-text="Home">Home</a></li>
           <li><a href="#projects" class="nav-link" data-text="Projects">Projects</a></li>
           <li><a href="#about" class="nav-link" data-text="About">About</a></li>
           <li><a href="#skills" class="nav-link" data-text="Skills">Skills</a></li>
           <li><a href="#contact" class="nav-link" data-text="Contact">Contact</a></li>
+          <li>
+            <div class="theme-toggle">
+              <input type="checkbox" id="theme-switch" class="theme-switch">
+              <label for="theme-switch" class="theme-label">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+                <span class="theme-ball"></span>
+              </label>
+            </div>
+          </li>
         </ul>
         
-        <div class="theme-toggle">
-          <input type="checkbox" id="theme-switch" class="theme-switch">
-          <label for="theme-switch" class="theme-label">
-            <i class="fas fa-moon"></i>
-            <i class="fas fa-sun"></i>
-            <span class="theme-ball"></span>
-          </label>
-        </div>
-        
         <button class="btn-mobile-nav" aria-label="Toggle navigation">
-          <span class="icon-mobile-nav" name="menu-outline"></span>
-          <span class="icon-mobile-nav" name="close-outline"></span>
+          <!-- Menu Icon -->
+          <svg class="icon-mobile-nav icon-menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+
+          <!-- Close Icon -->
+          <svg class="icon-mobile-nav icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
         </button>
+
       </nav>
     </div>
   </header>
@@ -120,6 +133,44 @@
       </div>
       
       <div class="projects-grid">
+        <!-- In Progress Project -->
+        <div class="project-card in-progress" data-cursor="hover">
+          <div class="project-img-box">
+            <img src="/assets/coming-soon-placeholder.jpg" alt="Project in progress" class="project-img" width="600" height="400" loading="lazy">
+            <div class="project-overlay">
+              <div class="construction-banner">
+                <span class="construction-icon">🚧</span>
+                <span>Coming Soon</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="project-content">
+            <span class="project-number">00</span>
+            <h3 class="project-title">E-Learning Platform</h3>
+            
+            <div class="tech-stack">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">TailwindCSS</span>
+              <span class="tech-tag">TypeScript</span>
+            </div>
+            
+            <p class="project-description">
+              An interactive online learning platform currently under development. 
+              Features will include course management, progress tracking, and live classrooms.
+            </p>
+            
+            <div class="project-links">
+              <span class="project-link disabled">
+                Live Demo <i class="fas fa-external-link-alt"></i>
+              </span>
+              <span class="project-link disabled">
+                Code <i class="fab fa-github"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+
         <!-- Project 1 -->
         <div class="project-card" data-cursor="hover">
           <div class="project-img-box">
@@ -137,8 +188,8 @@
             
             <div class="tech-stack">
               <span class="tech-tag">HTML</span>
-              <span class="tech-tag">CSS</span>
               <span class="tech-tag">TailwindCSS</span>
+              <span class="tech-tag">JavaScript</span>
             </div>
             
             <p class="project-description">
@@ -476,74 +527,6 @@
               <div class="progress-bar" style="width: 90%"></div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials Section -->
-  <section class="section-testimonials">
-    <div class="container">
-      <div class="section-header">
-        <span class="subheading">What People Say</span>
-        <h2 class="heading-secondary">Testimonials</h2>
-        <div class="section-divider"></div>
-      </div>
-      
-      <div class="testimonials-slider">
-        <div class="testimonial-card">
-          <div class="testimonial-content">
-            <div class="testimonial-quote">
-              <i class="fas fa-quote-left"></i>
-            </div>
-            <p class="testimonial-text">
-              Kwandile demonstrated exceptional problem-solving skills and attention to detail in our project. 
-              His clean code and responsive designs significantly improved our user experience metrics.
-            </p>
-          </div>
-          <div class="testimonial-author">
-            <div class="author-img-box">
-              <img src="./assets/testimonial-1.jpg" alt="John Doe" width="60" height="60" loading="lazy" class="author-img">
-            </div>
-            <div class="author-info">
-              <h4 class="author-name">John Doe</h4>
-              <p class="author-role">Product Manager, TechCorp</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="testimonial-card">
-          <div class="testimonial-content">
-            <div class="testimonial-quote">
-              <i class="fas fa-quote-left"></i>
-            </div>
-            <p class="testimonial-text">
-              Working with Kwandile was a pleasure. He consistently delivered high-quality code on time and was 
-              always willing to go the extra mile to ensure the project's success.
-            </p>
-          </div>
-          <div class="testimonial-author">
-            <div class="author-img-box">
-              <img src="./assets/testimonial-2.jpg" alt="Jane Smith" width="60" height="60" loading="lazy" class="author-img">
-            </div>
-            <div class="author-info">
-              <h4 class="author-name">Jane Smith</h4>
-              <p class="author-role">Lead Developer, WebSolutions</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="testimonial-slider-controls">
-          <button class="slider-btn prev-btn" aria-label="Previous testimonial">
-            <i class="fas fa-chevron-left"></i>
-          </button>
-          <div class="slider-dots">
-            <span class="dot active"></span>
-            <span class="dot"></span>
-          </div>
-          <button class="slider-btn next-btn" aria-label="Next testimonial">
-            <i class="fas fa-chevron-right"></i>
-          </button>
         </div>
       </div>
     </div>
