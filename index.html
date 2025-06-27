@@ -574,11 +574,14 @@
           </div>
         </div>
         
-        <form class="contact-form" id="contactForm">
+        <form action="https://api.web3forms.com/submit" method="POST" class="contact-form" id="contactForm">
           <div class="form-group">
             <label for="name" class="form-label">Name</label>
             <input type="text" id="name" name="name" class="form-input" placeholder="Your name" required>
           </div>
+
+          <!-- Replace with your Access Key -->
+          <input type="hidden" name="access_key" value="78fccd8b-d1a5-4ecb-b276-9ea00b8e2c9c">
           
           <div class="form-group">
             <label for="email" class="form-label">Email</label>
@@ -594,6 +597,9 @@
             <label for="message" class="form-label">Message</label>
             <textarea id="message" name="message" class="form-input" rows="5" placeholder="Your message" required></textarea>
           </div>
+
+          <!-- Honeypot Spam Protection -->
+          <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
           
           <button type="submit" class="btn btn--full form-btn" data-cursor="hover">
             Send Message <i class="fas fa-paper-plane"></i>
