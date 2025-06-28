@@ -158,23 +158,47 @@ document.addEventListener('DOMContentLoaded', function() {
   const formStatus = document.getElementById('formStatus');
   
   if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', async function(e) {
       e.preventDefault();
+
+      try {
+      // Show loading state
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      const originalBtnText = submitBtn.innerHTML;
+      submitBtn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
+      submitBtn.disabled = true;
       
-      // Simulate form submission
-      formStatus.textContent = 'Message sent successfully!';
-      formStatus.classList.add('success');
+      // Submit form to Web3Forms
+      const formData = new FormData(contactForm);
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        // Hide form and show success message
+        contactForm.style.display = 'none';
+        formStatus.classList.add('success');
+        formStatus.style.display = 'block';
+      } else {
+        throw new Error('Submission failed');
+      }
+    } catch (error) {
+      // Show error message
+      formStatus.classList.add('error');
       formStatus.style.display = 'block';
-      
-      // Reset form
-      contactForm.reset();
-      
-      // Hide status after 5 seconds
-      setTimeout(() => {
-        formStatus.style.display = 'none';
-        formStatus.classList.remove('success');
-      }, 5000);
-    });
+    } finally {
+      // Reset button state
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      if (submitBtn) {
+        submitBtn.innerHTML = originalBtnText;
+        submitBtn.disabled = false;
+      }
+    }
+  });
   }
   
   // Current Year in Footer
